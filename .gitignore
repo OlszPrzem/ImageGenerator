@@ -1,0 +1,6 @@
+__pycache__
+.pytest_cache
+imageGenerator/__pycache__
+imageGenerator/.pytest_cache
+.coverage
+processed
