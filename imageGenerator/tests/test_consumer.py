@@ -1,3 +1,5 @@
+''' Tests for Consumer object '''
+
 import numpy as np
 from queue import Queue
 import time
@@ -8,11 +10,15 @@ start_img = np.zeros((300, 300, 3), dtype = np.uint8)
 end_img = np.zeros((150, 150, 3), dtype = np.uint8)
 
 def test_Consumer_resize_RGB1() -> None:
+    ''' Test resize method on RGB image '''
+
     proceed_img = Consumer._resize(start_img, 2)
     assert (end_img==proceed_img).all()
 
 
 def test_Consumer_resize_GRAY1() -> None:
+    ''' Test resize method on GRAY image '''
+
     start_img = np.zeros((300, 300, 1), dtype = np.uint8)
     end_img = np.zeros((100, 100, 1), dtype = np.uint8)
 
@@ -21,6 +27,8 @@ def test_Consumer_resize_GRAY1() -> None:
 
 
 def test_Consumer_create() -> None:
+    ''' Test check corect create Consumer and alive main thread '''
+
     test_queue_A = Queue()
     test_queue_B = Queue()
 
@@ -36,6 +44,8 @@ def test_Consumer_create() -> None:
 
 
 def test_Consumer_stop() -> None:
+    ''' Test check correct stop Consumer main thread '''
+    
     test_queue_A = Queue()
     test_queue_B = Queue()
 
@@ -45,7 +55,6 @@ def test_Consumer_stop() -> None:
     )
 
     test_consumer.start()
-
     test_consumer.stop()
     time.sleep(0.1)
 
@@ -53,6 +62,11 @@ def test_Consumer_stop() -> None:
 
 
 def test_Consumer_put_get() -> None:
+    ''' 
+    Test check correct work of main loop Consumer, by put new 
+    frame to queue_A and recieved processed frame from queue_B
+    '''
+
     test_queue_A = Queue()
     test_queue_B = Queue()
 
