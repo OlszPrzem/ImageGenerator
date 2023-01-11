@@ -4,7 +4,11 @@ import numpy as np
 
 def create_save_folder(name_folder_to_save_img: str = "processed") -> str:
     '''
-    A function that creates a folder for saving new images with the variable name "name_folder_to_save_img". If the folder has already been created in the execution folder of the main script, then the function does nothing. If the folder with this name does not exist, then it creates a new folder with the specified name. 
+    A function that creates a folder for saving new images with the variable name 
+    "name_folder_to_save_img". If the folder has already created before, in the 
+    execution folder of the main script, then the function does nothing. If the 
+    folder with this name does not exist, then it creates a new folder with 
+    the specified name. 
 
     Parameters
     ----------
@@ -17,6 +21,7 @@ def create_save_folder(name_folder_to_save_img: str = "processed") -> str:
         Path to the folder with name of variable "name_folder_to_save_img"
 
     '''
+    
     _path_parent_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     _path_folder_to_save_img = os.path.join(
         _path_parent_folder, name_folder_to_save_img)
@@ -36,23 +41,17 @@ def save_img(frame: np.ndarray, path_folder_to_save_frame: str, file_name: str) 
     frame : np.ndarray
         Numpy array representing the image(RGB). 
         Values in the image range from 0 to 255.
-        Example: frame = np.zeros((300,300,3), dtype=np.uint8)
 
     path_folder_to_save_frame : str
         Path to the folder where to save the image.
-        Example: "C:\\Users\\Adam\\Photos"
 
     file_name : str
         Name of the image to be saved. The name is to include the save extension. 
-        Example: "reksio.png"
 
     Returns
     -------
     None
-
-    Example
-    -------
-
     '''
+    
     path_save = os.path.join(path_folder_to_save_frame, file_name)
     cv2.imwrite(path_save,frame)
