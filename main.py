@@ -1,7 +1,7 @@
 """
 Program prepared due to recrutation task.
 
-Application have two workers, in two seperated threads. 
+Application have two workers, in two seperate threads. 
 First of them - "Producer" has to use source method to generate images and put to queue_A. 
 Second worker - "Consumer" has to download images from queue_A, change them size and apply 
 median filter, to the end put new processed image to queue_B.
@@ -26,14 +26,14 @@ class MainProgram:
         Queue with new frames. Frame from queue_A is download by get() method.
 
     queue_B : queue.Queue
-        Queue for processed frames. New images are adding to queue_B by 
+        Queue for processed frames. New images are added to queue_B via
         put() method.
 
     num_frames_to_generate : int
-        Number of images that should generate and save in folder.
+        Number of images that should generated and save in folder.
 
     base_name_saved_imgs : str
-        Part of the name of images, that is genereted for each new run program.
+        Part of the name of images, that is generated for each new run program.
 
     path_folder_to_save_img : str
         Patch of a folder where new generated images will be save.
@@ -48,7 +48,7 @@ class MainProgram:
     Consumer : Consumer
         Instance of class Consumer. Main aim that object is download frame from
         queue_A, resize that frame, apply median filter on that frame and put
-        processed frame to queue_A.
+        processed frame to queue_B.
 
     Methods:
     --------
@@ -59,11 +59,11 @@ class MainProgram:
         Method for generate name of img to save
 
         Arguments:
-        - ```num_actual_saved_img``` - numer actual img to save
+        - ```num_actual_saved_img``` : int - numer actual img to save
 
 
         Return:
-        - ```name_file``` - generated name of file with 
+        - ```name_file``` : str - generated name of file with 
         extension *.png, for atctual image number.
 
 
@@ -75,7 +75,7 @@ class MainProgram:
     
     '''
 
-    def __init__(self):
+    def __init__(self) -> None:
         '''
         Constructor
 
@@ -141,13 +141,13 @@ class MainProgram:
         self.producer.stop()
         self.consumer.stop()
 
-    def generate_name(self, num_actual_saved_img: str) -> str:
+    def generate_name(self, num_actual_saved_img: int) -> str:
         '''
-        Method generate name for file to save, with extension *.png .
+        Method to generate new file  name to save, with extension *.png .
         
         Parameters:
         -----------
-        num_actual_saved_img : str
+        num_actual_saved_img : int
             Number of actual saving photo.
 
 
