@@ -7,7 +7,7 @@ from queue import Queue
 
 class Consumer(threading.Thread):
     '''
-    A class for modifying image frames by resize and median filter. 
+    A class for modify image frames by resize and median filter. 
 
     Attributes:
     -----------
