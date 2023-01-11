@@ -18,7 +18,7 @@ import imageGenerator as ig # Special prepared for this task package imageGenera
 
 class MainProgram:
     '''
-    Main class of program on recrutation. 
+    Main class of program. 
 
     Attributes:
     -----------
