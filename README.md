@@ -8,6 +8,11 @@ In the main loop of the program, the images from queue B are downloaded and save
 
 ## Requirements:
 ```
-numpy
-cv2
+Package         Version
+--------------- ---------
+numpy           1.24.1
+opencv-python   4.7.0.68
+pandas          1.5.2
+pytest          7.2.0
+pytest-cov      4.0.0
 ```
