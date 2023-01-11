@@ -59,12 +59,12 @@ class MainProgram:
         Method for generate name of img to save
 
         Arguments:
-        - ```num_actual_saved_img``` : int - numer actual img to save
+        - ```num_actual_saved_img``` - numer actual img to save ``` int ```
 
 
         Return:
-        - ```name_file``` : str - generated name of file with 
-        extension *.png, for atctual image number.
+        - ```name_file``` - generated name of file with 
+        extension *.png, for atctual image number. ``` str ```
 
 
     Examples 
