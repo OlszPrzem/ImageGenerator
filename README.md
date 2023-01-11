@@ -8,6 +8,8 @@ In the main loop of the program, the images from queue B are downloaded and save
 
 ## Requirements:
 ```
+Python 3.10.8
+
 Package         Version
 --------------- ---------
 numpy           1.24.1
